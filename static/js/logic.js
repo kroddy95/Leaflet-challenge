@@ -1,10 +1,10 @@
 //Colors for circles and legend
-var mapColors = ["#98ee00", "#d4ee00", "#eecc00", "#ee9c00", "#ea822c", "#ea2c2c"];
+var mapColors = ["greenyellow", "yellow", "gold", "goldenrod", "sandybrown", "tomato"];
 
 //URL of data
 var url ="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson"
 
-//Get the data from the URL
+//Get the JSON from the URL
 d3.json(url, function(data) {
     createFeatures(data.features);
 });
@@ -33,7 +33,7 @@ function createFeatures(earthquakeData) {
         return new L.CircleMarker(latlng, myStyle)
     }
 
-    //Set the color base on the depth
+    //Set the color baseed on the depth of the earthquake
     function markerColor(depth) {
         if (depth > 90) {return mapColors[5]}
         else if (depth > 70 && depth <= 90) {return mapColors[4]}
@@ -96,5 +96,4 @@ function createMap(earthquakes) {
  
    // Adding legend to the map
    legend.addTo(myMap);
-
  }
