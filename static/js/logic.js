@@ -28,7 +28,7 @@ function createFeatures(earthquakeData) {
         var myStyle = {
             radius: feature.properties.mag * 4,
             fillOpacity: 0.5,
-            color: markerColor(feature.geometry.coordinates[2]),
+            color: markerColor(feature.geometry.coordinates[2])
         }
         return new L.CircleMarker(latlng, myStyle)
     }
@@ -76,7 +76,7 @@ function createMap(earthquakes) {
    var legend = L.control({ position: "bottomright" });
    legend.onAdd = function() {
         //The labels for each color
-        var labels = ["-10 - 10", "10 - 30", "30 - 50", "50 - 70", "70 - 90", "90+"];
+        var labels = ["-10 - 10 km", "10 - 30 km", "30 - 50 km", "50 - 70 km", "70 - 90 km", "90+ km"];
 
         //Start the ordered list
         var list = '<ul style="list-style-type:none;"><li>Earthquake Depth</li>';
