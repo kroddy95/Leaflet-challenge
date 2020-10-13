@@ -28,7 +28,9 @@ function createFeatures(earthquakeData) {
         var myStyle = {
             radius: feature.properties.mag * 4,
             fillOpacity: 0.5,
-            color: markerColor(feature.geometry.coordinates[2])
+            color: "LightSteelBlue",
+            fillColor: markerColor(feature.geometry.coordinates[2]),
+            weight: 1
         }
         return new L.CircleMarker(latlng, myStyle)
     }
