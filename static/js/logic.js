@@ -79,14 +79,15 @@ function createMap(earthquakes) {
         var labels = ["-10 - 10 km", "10 - 30 km", "30 - 50 km", "50 - 70 km", "70 - 90 km", "90+ km"];
 
         //Start the ordered list
-        var list = '<ul style="list-style-type:none;"><li>Earthquake Depth</li>';
+        var list = '<ul style="list-style-type:none;"><li><b>Earthquake Depth</b></li>';
         
         //Create the div
         var div = L.DomUtil.create("div");
 
         //Add list item for each color
         labels.forEach(function(x, index) {
-            list += "<li style=\"background-color: " + mapColors[index] + "\"> " + labels[index] + "</li>";
+            list += '<li>' + '<span style="color:' + mapColors[index] + '; background-color:' + mapColors[index] + '">box</span>' +
+            '<span style="color:black">' + '&nbsp&nbsp&nbsp' + labels[index] + '</span></li>';
         });
 
         //Finish off the list html
