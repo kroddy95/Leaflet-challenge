@@ -20,7 +20,7 @@ function createFeatures(earthquakeData) {
     //Create the popup for each earthquake
     function onEachFeature(feature, layer) {
         layer.bindPopup("<h2>" + feature.properties.place + "</h2><hr><p>Magnitude: " + feature.properties.mag + 
-        "<br>Depth: " + feature.geometry.coordinates[2] + "<br>Date: "+ new Date(feature.properties.time) + "</p>");
+        "<br>Depth: " + feature.geometry.coordinates[2] + " km" + "<br>Date/Time: "+ new Date(feature.properties.time) + "</p>");
     }
 
     //Set the size and color of the earthquake circle
